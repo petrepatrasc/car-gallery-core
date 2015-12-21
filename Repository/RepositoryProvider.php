@@ -1,12 +1,19 @@
 <?php
 
 
-namespace CarGallery\CoreBundle\Manager;
+namespace CarGallery\CoreBundle\Repository;
 
 
+use CarGallery\CoreBundle\Manager\string;
 use Doctrine\Common\Persistence\ObjectManager;
 
-class BaseManager
+/**
+ * Defines a mechanism for fetching repositories from an object manager.
+ *
+ * @package CarGallery\CoreBundle\Manager
+ * @author  Petre Pătrașc <petre@dreamlabs.ro>
+ */
+class RepositoryProvider
 {
     /**
      * @var ObjectManager
@@ -14,7 +21,7 @@ class BaseManager
     protected $manager;
 
     /**
-     * BaseManager constructor.
+     * RepositoryProvider constructor.
      *
      * @param ObjectManager $manager
      */

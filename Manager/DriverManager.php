@@ -6,7 +6,7 @@ namespace CarGallery\CoreBundle\Manager;
 use CarGallery\CoreBundle\Repository\DriverRepository;
 
 /**
- * Defines interactions possible with the driver manager.
+ * Defines interactions possible with the Driver manager.
  *
  * @package CarGallery\CoreBundle\Manager
  * @author  Petre Pătrașc <petre@dreamlabs.ro>
@@ -16,20 +16,20 @@ class DriverManager
     /**
      * @var DriverRepository
      */
-    protected $driverRepo;
+    protected $driverRepository;
 
     /**
      * DriverManager constructor.
      *
-     * @param DriverRepository $driverRepo
+     * @param DriverRepository $driverRepository
      */
-    public function __construct(DriverRepository $driverRepo)
+    public function __construct(DriverRepository $driverRepository)
     {
-        $this->driverRepo = $driverRepo;
+        $this->driverRepository = $driverRepository;
     }
 
     public function findById(int $id, bool $deleted = false)
     {
-        return $this->driverRepo->find($id);
+        return $this->driverRepository->find($id);
     }
 }

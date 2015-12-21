@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="car_gallery.core.driver.repository.name">AppBundle:Driver</parameter>
+    </parameters>
+
+    <services>
+        <service id="car_gallery.core.repository.provider" class="CarGallery\CoreBundle\Repository\RepositoryProvider" public="false">
+            <argument type="service" id="doctrine.orm.default_entity_manager"/>
+        </service>
+
+        <service id="car_gallery.core.driver.repository" class="CarGallery\CoreBundle\Repository\DriverRepository" public="false">
+            <factory service="car_gallery.core.repository.provider" method="getRepository"/>
+            <argument>%car_gallery.core.driver.repository.name%</argument>
+        </service>
+    </services>
+</container>

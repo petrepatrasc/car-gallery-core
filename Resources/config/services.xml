@@ -5,21 +5,8 @@
            xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <services>
-        <service id="car_gallery.core.base.manager" class="CarGallery\CoreBundle\Manager\BaseManager">
-            <argument type="service" id="doctrine.orm.default_entity_manager"/>
-        </service>
-
         <service id="car_gallery.core.driver.manager" class="CarGallery\CoreBundle\Manager\DriverManager">
             <argument type="service" id="car_gallery.core.driver.repository"/>
         </service>
     </services>
-    <!--
-    <services>
-        <service id="car_gallery_core.example" class="CarGallery\CoreBundle\Example">
-            <argument type="service" id="service_id" />
-            <argument>plain_value</argument>
-            <argument>%parameter_name%</argument>
-        </service>
-    </services>
-    -->
 </container>
